@@ -14,10 +14,14 @@ import (
 
 var (
 	configPath string
+	certFile   string
+	keyFile    string
 )
 
 func init() {
 	flag.StringVar(&configPath, "config", "config.toml", "path to configs file")
+	flag.StringVar(&certFile, "certfile", "cert.pem", "certificate PEM file")
+	flag.StringVar(&keyFile, "keyfile", "key.pem", "key PEM file")
 }
 
 var Version string
@@ -43,7 +47,7 @@ func main() {
 	store := sqlstore.New(db)
 
 	//Старт HTTP API сервера
-	if err := apiserver.Start(store, config); err != nil {
+	if err := apiserver.Start(store, config, certFile, keyFile); err != nil {
 		log.Fatal(err)
 	}
 

@@ -7,8 +7,8 @@ import (
 )
 
 // Запуск сервера
-func Start(store *sqlstore.Store, config *configurer.Config) error {
+func Start(store *sqlstore.Store, config *configurer.Config, certFile string, keyFile string) error {
 
 	s := newServer(store, config)
-	return http.ListenAndServe(config.BindAddr, s)
+	return http.ListenAndServeTLS(config.BindAddr, certFile, keyFile, s)
 }
