@@ -1,0 +1,13 @@
+#general
+BIND_ADDR = ":8091"
+LOG_LEVEL = "debug"
+
+#database
+DATABASE_URL = "root:Alli80ed!@tcp(127.0.0.1:3306)/touchon_heat?parseTime=true"
+MAX_LIFETIME = 5
+MAX_IDLE_TIME = 15
+MAX_OPEN_CONNS = 100
+MAX_IDLE_CONNS = 50
+
+#token
+TOKEN_SECRET = "Alli80ed!"
