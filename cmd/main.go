@@ -17,7 +17,7 @@ var (
 )
 
 func init() {
-	flag.StringVar(&configPath, "config", "", "path to configs file")
+	flag.StringVar(&configPath, "config", "config.toml", "path to configs file")
 }
 
 var Version string

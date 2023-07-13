@@ -2,6 +2,7 @@ package sqlstore
 
 import (
 	"database/sql"
+	_ "github.com/go-sql-driver/mysql"
 	"touchon_home/internal/store"
 )
 

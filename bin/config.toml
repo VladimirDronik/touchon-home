@@ -1,9 +1,9 @@
 #general
-BIND_ADDR = ":8091"
+BIND_ADDR = ":8092"
 LOG_LEVEL = "debug"
 
 #database
-DATABASE_URL = "root:Alli80ed!@tcp(127.0.0.1:3306)/touchon_heat?parseTime=true"
+DATABASE_URL = "root:Alli80ed!@tcp(127.0.0.1:3306)/touchon_home?parseTime=true"
 MAX_LIFETIME = 5
 MAX_IDLE_TIME = 15
 MAX_OPEN_CONNS = 100
