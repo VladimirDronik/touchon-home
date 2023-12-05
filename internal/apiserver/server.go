@@ -94,7 +94,7 @@ func (s *server) respond(w http.ResponseWriter, r *http.Request, code int, data 
 	}
 }
 
-// Получение всех устройств, которые доступны пользователю
+// Получение всех серверов, которые доступны пользователю
 func (s *server) getHomeServers() http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
