@@ -99,7 +99,7 @@ func (s *server) getHomeServers() http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		homeServers, err := s.store.Server().GetByUser(s.getParam(w, r, "user_id"))
+		homeServers, err := s.store.Server().GetByUser(s.userID)
 
 		if err != nil {
 			s.message(w, r, http.StatusNotFound, err)
