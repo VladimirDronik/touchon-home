@@ -75,7 +75,8 @@ func (s *server) autenеificateUser(next http.Handler) http.Handler {
 		//Проверяем не протух ли токен и извлекаем ID юзера
 		s.userID, err = JWTToken.KeysExtract(r.Header["Token"][0], s.config.TokenSecret)
 		if err != nil {
-			s.message(w, r, http.StatusBadRequest, err)
+			s.message(w, r, http.StatusUnauthorized, err)
+			return
 		}
 
 		next.ServeHTTP(w, r.WithContext(context.WithValue(r.Context(), ctxKeyAllow, true)))
